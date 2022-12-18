@@ -1,0 +1,94 @@
+<div class="text-center ">
+  <h1> <b> Dersler</b></h1>
+</div>
+<h5> <b> Lütfen Üye Seçiniz</b></h5>
+
+<select [(ngModel)]="uyeId" (ngModelChange)="UyeSec($event)" class="form-control mt-1 w-25">
+  <option [value]="uye.id" *ngFor="let uye of uyeler">{{uye.adSoyad}}</option>
+</select>
+
+<div *ngIf="uyeId!=0" class="alert alert-info mt-2 w-25">Seçili Üye : {{secUye.adSoyad}}</div>
+
+<button class="btn  btn-warning my-2" *ngIf="dataServis.aktifUye.rol!=='3'" (click)="Ekle(ModalEkleDuzenle)"><i
+    class="bi bi-plus-lg" style="color:#000000 ;"></i> Ders Ekle</button>
+
+<table class="table table-hover table-striped">
+  <thead class="thead-dark">
+    <th>Id</th>
+    <th>Üyenin Dersi</th>
+    <th>Dersin Üyesi</th>
+    <th>Kayıt Tarihi</th>
+    <th>Ders Konuları</th>
+    <th>Düzenle</th>
+    <th>Sil</th>
+  </thead>
+  <tbody class="table-group-divider">
+    <tr *ngFor="let uyedersler of uyeDersler">
+      <td>{{uyedersler.id}}</td>
+      <td>{{uyedersler.dersId}}</td>
+      <td>{{uyedersler.uyeId}}</td>
+      <td>{{uyedersler.kayTarih | date:"dd.mm.yyyy hh.mm.ss"}}</td>
+      <td><button class="btn  btn-success rounded-circle" [routerLink]="['/konular',uyedersler.id]"><i
+            class="bi bi-pencil-square" style="color:#000000 ;"></i></button></td>
+      <td><button class="btn  btn-warning rounded-circle" (click)="Duzenle(uyedersler,ModalEkleDuzenle)"
+          [disabled]="dataServis.aktifUye.rol=='3'"><i class="bi bi-pencil-square" style="color:#000000 ;"></i></button>
+      </td>
+      <td><button class="btn  btn-danger  rounded-circle" (click)="Sil(uyedersler,ModalSil)"
+          [disabled]="dataServis.aktifUye.rol=='3'"><i class="bi bi-trash3" style="color:#000000 ;"></i></button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="modal" tabindex="-1" #ModalEkleDuzenle>
+  <div class="modal-dialog">
+    <form [formGroup]="frm" (ngSubmit)="UyeDersEkleDuzenle()">
+      <div class="modal-content">
+        <div class="modal-header bg-warning text-black">
+          <h5 class="modal-title">{{modalBaslik}}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <input type="hidden" class="form-control" formControlName="id">
+
+            <label>Ders Adı</label>
+            <select class="form-control mt-1" formControlName="lessonId">
+              <option [value]="ders.id" *ngFor="let ders of dersler">{{ders.dersAdi}}</option>
+            </select>
+            <label>Öğrenci Adı</label>
+            <select class="form-control mt-1" formControlName="userId">
+              <option [value]="uye.id" *ngFor="let uye of uyeler">{{uye.adSoyad}}</option>
+            </select>
+            <input type="hidden" class="form-control" formControlName="kayTarih">
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <input type="submit" class="btn btn-warning" value="Kaydet">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">İptal</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<div class="modal" tabindex="-1" #ModalSil>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-danger text-black">
+        <h5 class="modal-title">{{modalBaslik}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h6 *ngIf="secUyeDers"> <b>{{secUyeDers.dersId}}</b> Adlı Ders Silinecektir Onaylıyor Musunuz ?</h6>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" (click)="UyeDersSil()">Sil</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">İptal</button>
+      </div>
+    </div>
+
+  </div>
+</div>

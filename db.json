@@ -1,0 +1,187 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "adSoyad": "admin",
+      "yas": 20,
+      "mail": "admin@gmail.com",
+      "parola": "123",
+      "rol": "1",
+      "kayTarih": "1669993881224",
+      "duzTarih": "1670266231046"
+    },
+    {
+      "id": 2,
+      "adSoyad": "ogretmen",
+      "yas": 26,
+      "mail": "ogretmen@gmail.com",
+      "parola": "123",
+      "rol": "2",
+      "kayTarih": "1669993881224",
+      "duzTarih": "1670266234441"
+    },
+    {
+      "id": 3,
+      "adSoyad": "ogrenci",
+      "yas": 18,
+      "mail": "ogrenci@gmail.com",
+      "parola": "123",
+      "rol": "3",
+      "kayTarih": "1669993881224",
+      "duzTarih": "1670266237566"
+    },
+    {
+      "id": 4,
+      "adSoyad": "ogrenci2",
+      "yas": 23,
+      "mail": "ogrenci2@gmail.com",
+      "parola": "123",
+      "rol": "3",
+      "kayTarih": "1669993881224",
+      "duzTarih": "1670266240696"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "kategoriAdi": "Yazılım Eğitimi",
+      "aciklama": "Modern tekniklerle Web Geliştirme ( Web Development ) Öğrenin. HTML,CSS, Node , JavaScript, React, Angular, ASP.NET Core",
+      "resim": "https://cdn.pixabay.com/photo/2015/09/05/20/02/coding-924920_960_720.jpg",
+      "kayTarih": "1669993881224",
+      "duzTarih": "1670210911230"
+    },
+    {
+      "id": 2,
+      "kategoriAdi": "Tasarım Eğitimi",
+      "aciklama": "Photoshop CC Dersleri: Başlangıç, orta ve ileri Photoshop Kursu. Bridge CC ve Fotoğrafçılara özel Camera RAW Öğrenin!",
+      "resim": "https://cdn.pixabay.com/photo/2018/05/12/19/20/mosaic-3394375_960_720.jpg",
+      "kayTarih": "1669993881224",
+      "duzTarih": "1670210947427"
+    },
+    {
+      "id": 3,
+      "kategoriAdi": "Sağlık Eğitimi",
+      "aciklama": "İlk Yardım Nasıl Yapılır ? Hangi Durumlarda Nasıl Müdehale Edilir ve Nasıl Önlemlemler Alınmalıdır. Hepsi Bu Eğitimde.",
+      "resim": "https://media.istockphoto.com/id/1406496671/tr/foto%C4%9Fraf/psychiatrist-or-professional-psychologist-counseling-or-therapy-session-to-male-patients.jpg?b=1&s=170667a&w=0&k=20&c=-UZMEkGje4Dcn6Vt2tbVN4qCL2ifscGam2YoZj84mPM=",
+      "kayTarih": "1669993881224",
+      "duzTarih": "1670210975799"
+    },
+    {
+      "id": 4,
+      "kategoriAdi": "Müzik Eğitimi",
+      "aciklama": "Kısa sürede Piyano çalmayı ve nota okumayı öğrenip, piyanonun temellerini kolayca anlayacaksınız.",
+      "resim": "https://cdn.pixabay.com/photo/2016/09/08/21/09/piano-1655558_960_720.jpg",
+      "kayTarih": "1669993881224",
+      "duzTarih": "1670211002094"
+    },
+    {
+      "id": 5,
+      "kategoriAdi": "İşletme",
+      "aciklama": "E-İhracat, E-Ticaret, İçerik, Satış ve Kargo Paketlemeye Kadar Olan Deneyim Yolculuğuna Hazır Olun.",
+      "resim": "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341__340.jpg",
+      "kayTarih": "1670210845280",
+      "duzTarih": "1670210845280"
+    },
+    {
+      "id": 6,
+      "kategoriAdi": "Pazarlama",
+      "aciklama": "\"A'dan Z'ye YouTube Para Kazanma Sırları\" YouTube izlenme arttırma hakkında her şey. Sıralamada her zaman önde çıkın.",
+      "resim": "https://cdn.pixabay.com/photo/2016/06/03/13/57/digital-marketing-1433427__340.jpg",
+      "kayTarih": "1670211341999",
+      "duzTarih": "1670211341999"
+    }
+  ],
+  "lessons": [
+    {
+      "id": 1,
+      "dersKodu": "P",
+      "dersAdi": "Python",
+      "dersKredisi": 3,
+      "dersSaati": 30,
+      "categoryId": 1,
+      "kayTarih": "1669993881224",
+      "duzTarih": "1670102736863"
+    },
+    {
+      "id": 2,
+      "dersKodu": "PH",
+      "dersAdi": "Photoshop",
+      "dersKredisi": 4,
+      "dersSaati": 32,
+      "categoryId": 2,
+      "kayTarih": "1669993881224",
+      "duzTarih": "1670022412740"
+    },
+    {
+      "id": 3,
+      "dersKodu": "SP",
+      "dersAdi": "Spor",
+      "dersKredisi": 5,
+      "dersSaati": 26,
+      "categoryId": 3,
+      "kayTarih": "1669993881224",
+      "duzTarih": "1670022412740"
+    },
+    {
+      "id": 5,
+      "dersKodu": "java",
+      "dersAdi": "döngüler",
+      "dersKredisi": "3",
+      "dersSaati": "44",
+      "categoryId": "1",
+      "kayTarih": "1670027591182",
+      "duzTarih": "1670027591182"
+    },
+    {
+      "id": 6,
+      "dersKodu": "illustartor",
+      "dersAdi": "pentool",
+      "dersKredisi": "2",
+      "dersSaati": "22",
+      "categoryId": "2",
+      "kayTarih": "1670027631671",
+      "duzTarih": "1670027631671"
+    },
+    {
+      "id": 7,
+      "dersKodu": "gitar",
+      "dersAdi": "gitar",
+      "dersKredisi": "2",
+      "dersSaati": "22",
+      "categoryId": "4",
+      "kayTarih": "1670028113372",
+      "duzTarih": "1670029047261"
+    }
+  ],
+  "subjects": [
+    {
+      "id": 1,
+      "konuAdi": "Python Temelleri",
+      "lessonId": 1
+    },
+    {
+      "id": 2,
+      "konuAdi": "Post Tasarımı",
+      "lessonId": 2
+    },
+    {
+      "id": 3,
+      "konuAdi": "Spor Ve Sağlık",
+      "lessonId": 3
+    }
+  ],
+  "users_lessons": [
+    {
+      "id": 1,
+      "lessonId": 5,
+      "userId": 3,
+      "kayTarih": "1670268965358"
+    },
+    {
+      "id": 2,
+      "lessonId": "2",
+      "userId": "3",
+      "kayTarih": "1671105540444"
+    }
+  ]
+}

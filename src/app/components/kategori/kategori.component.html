@@ -1,0 +1,82 @@
+<div class="text-center">
+  <h1> <b> Kategoriler</b></h1>
+</div>
+<button class="btn  btn-warning mb-2" *ngIf="dataServis.aktifUye.rol!=='3'"
+ (click)="Ekle(ModalEkleDuzenle)"><i class="bi bi-plus-lg"
+    style="color:#000000 ;"></i> Kategori Ekle</button>
+<table class="table table-hover table-striped">
+  <thead class="thead-dark">
+    <th>Id</th>
+    <th>Kategori Adı</th>
+    <th>Kayıt Tarih</th>
+    <th>Düzenleme Tarih</th>
+    <th>Dersler</th>
+    <th>Düzenle</th>
+    <th>Sil</th>
+  </thead>
+  <tbody class="table-group-divider">
+    <tr *ngFor="let kategori of kategoriler">
+      <td>{{kategori.id}}</td>
+      <td>{{kategori.kategoriAdi}}</td>
+      <td>{{kategori.kayTarih | date:"dd.mm.yyyy hh.mm.ss"}}</td>
+      <td>{{kategori.duzTarih | date:"dd.mm.yyyy hh.mm.ss"}}</td>
+
+      <td><button class="btn  btn-success rounded-circle" [routerLink]="['/dersler',kategori.id]"><i
+            class="bi bi-book" style="color:#000000 ;"></i></button></td>
+      <td><button class="btn  btn-warning rounded-circle" (click)="Duzenle(kategori,ModalEkleDuzenle)" [disabled]="dataServis.aktifUye.rol=='3'"><i
+            class="bi bi-pencil-square" style="color:#000000 ;"></i></button></td>
+      <td><button class="btn  btn-danger  rounded-circle" (click)="Sil(kategori,ModalSil)" [disabled]="dataServis.aktifUye.rol=='3'"><i class="bi bi-trash3"
+            style="color:#000000 ;"></i></button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="modal" tabindex="-1" #ModalEkleDuzenle>
+  <div class="modal-dialog">
+    <form [formGroup]="frm" (ngSubmit)="KategoriEkleDuzenle()">
+      <div class="modal-content">
+        <div class="modal-header bg-warning text-black">
+          <h5 class="modal-title">{{modalBaslik}}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <input type="hidden" class="form-control" formControlName="id">
+            <label>Kategori Adı</label>
+            <input type="text" class="form-control mt-1" formControlName="kategoriAdi">
+            <label>Açıklama</label>
+            <input type="text" class="form-control mt-1" formControlName="aciklama">
+            <label>Resim</label>
+            <input type="text" class="form-control mt-1" formControlName="resim">
+            <input type="hidden" class="form-control" formControlName="kayTarih">
+            <input type="hidden" class="form-control" formControlName="duzTarih">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <input type="submit" class="btn btn-warning" value="Kaydet">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">İptal</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<div class="modal" tabindex="-1" #ModalSil>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-danger text-black">
+        <h5 class="modal-title">{{modalBaslik}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h6 *ngIf="secKategori"> <b>{{secKategori.kategoriAdi}}</b> Adlı Kategori Silinecektir Onaylıyor Musunuz ?</h6>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" (click)="KategoriSil()">Sil</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">İptal</button>
+      </div>
+    </div>
+  </div>
+</div>

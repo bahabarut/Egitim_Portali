@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="alert alert-danger" *ngIf="!dataServis.OturumKontrol()">
+                <h3>Lütfen Giriş Yapınız <a href="/login" class="alert-link">Giriş</a></h3>
+            </div>
+
+            <div class="alert alert-info" *ngIf="dataServis.OturumKontrol()">
+                <h3>Hoş Geldiniz : <b> {{dataServis.aktifUye.adSoyad}}</b></h3>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row justify-content-center">
+        <div class="card mb-3 ms-5" style="max-width: 540px;" *ngFor="let kategori of kategoriler">
+            <div class="row g-0">
+                <div class="col-md-4 m-auto">
+                    <img [src]="[kategori.resim]" class="img-fluid rounded-start">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{kategori.kategoriAdi}}</h5>
+                        <p class="card-text">{{kategori.aciklama}}</p>
+                        <p class="card-text"><small class="text-muted"> <b>Kayıt Tarihi : </b>{{kategori.kayTarih |
+                                date:"dd.mm.yyyy"}}</small> <button class="btn btn-success btn-sm ms-2"
+                                [routerLink]="['/dersler',kategori.id]">Dersler</button></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
